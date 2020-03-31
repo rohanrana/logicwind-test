@@ -20,7 +20,6 @@ class App extends React.Component {
   };
 
   onCollapse = collapsed => {
-    console.log(collapsed);
     this.setState({ collapsed });
   };
 
@@ -36,7 +35,6 @@ class App extends React.Component {
             defaultSelectedKeys={["people"]}
             defaultOpenKeys={["sub1"]}
             onClick={e => {
-              //  console.log("KEY",key)
               this.props.history.push(`/${e.key}`);
             }}
             theme="dark"
@@ -66,7 +64,7 @@ class App extends React.Component {
               defaultSelectedKeys={["people"]}
               defaultOpenKeys={["sub1"]}
               onClick={e => {
-                //  console.log("KEY",key)
+                //        .log("KEY",key)
                 this.props.history.push(`/${e.key}`);
               }}
               style={{ height: "100%", borderRight: 0 }}
@@ -88,11 +86,6 @@ class App extends React.Component {
             </Menu>
           </Sider>
           <Layout style={{ padding: "0 24px 24px" }}>
-            {/* <Breadcrumb style={{ margin: "16px 0" }}>
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
-              <Breadcrumb.Item>App</Breadcrumb.Item>
-            </Breadcrumb> */}
             <Content
               className="site-layout-background"
               style={{

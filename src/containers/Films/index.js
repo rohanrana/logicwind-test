@@ -13,7 +13,7 @@ class Films extends Component {
     loading: false
   };
   componentDidMount() {
-    this.GetFilmsData();  
+    this.GetFilmsData();
   }
 
   GetFilmsData = e => {
@@ -24,7 +24,6 @@ class Films extends Component {
 
     this.setState({ loading: true }, () => {
       UtilService.callApi(obj, (err, data) => {
-        console.log("DATA", data);
 
         this.setState({
           peoples: data.results,
@@ -44,7 +43,6 @@ class Films extends Component {
 
     this.setState({ loadmoreloading: true }, () => {
       UtilService.callApi(obj, (err, data) => {
-        console.log("DATA", data);
 
         this.setState({
           peoples: [...this.state.peoples, ...data.results],
@@ -56,8 +54,6 @@ class Films extends Component {
     });
   };
 
-
- 
   render() {
     let { peoples, loading, loadmoreloading } = this.state;
     return (
@@ -65,9 +61,54 @@ class Films extends Component {
         <Row gutter={16}>
           {!loading &&
             peoples.map((film, index) => {
+
+                let data = film.characters
+
               return (
-                <CardComponent {...this.props} id={index + 1} name={film.title} detailLBL="films" {...film} />
+                <div
+                  onClick={() =>
+                    this.props.history.push(`/${"films"}/${index + 1}/`)
+                  }
+                  key={index}
+
+                  style={{ cursor: "pointer" }}
+                  className="card-wrapper"
+                >
+                  <h1>{film.title}</h1>
+                  <hr />
+                  <ul className="card-list-wrapper">
+                    {data.slice(0, 5).map((d, index) => {
+
+                       let id = d.split("/")[5]
+
+                      return (
+                        <span
+                  key={index}
+
+                          style={{ cursor: "pointer" }}
+                          onClick={event => {
+                            event.stopPropagation();
+                            this.props.history.push(
+                              `/${"people"}/${id}/`
+                            );
+                          }}
+                        >{`People${index + 1}`}</span>
+                      );
+                    })}
+                  </ul>
+                </div>
               );
+
+              // return (
+              //   <CardComponent
+              //     metaData={film.characters}
+              //     {...this.props}
+              //     id={index + 1}
+              //     name={film.title}
+              //     detailLBL="films"
+              //     {...film}
+              //   />
+              // );
             })}
         </Row>
 

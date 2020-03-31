@@ -23,11 +23,43 @@
 }
 .detail-inner {
   padding: 10px;
-  /* padding-left: 4px; */
+  /* padding-left: 4px; */  
   /* color: black; */
 }
+ul.card-list-wrapper {
+  display: flex;  
+  flex-direction: column;
+  padding-right: 40px;
+  /* text-align: center; */
+}
 
+.card-wrapper {
+  /* display: flex; */
+  /* flex-direction: column; */
+  width: 22%;
+  background: white;
+  /* padding: 10px; */
+  margin-left: 14px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 24px;
+}
 
+ul.card-detail-wrapper {
+  list-style: none;
+  /* color: #0000ffa6; */
+}
+
+li.card-list.invert {
+  padding-left: 48px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+
+li.card-list {
+  cursor: pointer;
+}
 .detail-inner > lable {
   color: black;
 }

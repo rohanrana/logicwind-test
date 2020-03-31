@@ -21,7 +21,6 @@ export class DetailPage extends Component {
 
     this.setState({loading:true},()=>{
         UtilService.callApi(obj, (err, data) => {
-            console.log("DATA", data);
             this.setState({
               detail: data,
               loading:false
