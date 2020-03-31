@@ -1,0 +1,33 @@
+/* .header.logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 28px 16px 0;
+  float: left;
+}
+
+.site-layout-background {
+  background: #fff;
+} */
+.logo{
+  color: #ffe300;
+  color: #ffe300;
+  margin-right: 45px;
+ }
+ header.ant-layout-header.header {
+  display: flex;
+  font-size: 28px;
+  font-weight: 600;
+
+  
+}
+.detail-inner {
+  padding: 10px;
+  /* padding-left: 4px; */
+  /* color: black; */
+}
+
+
+.detail-inner > lable {
+  color: black;
+}
